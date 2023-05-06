@@ -13,16 +13,36 @@
 // }
 
 const carrito = [
-    {Nombre: 'Monitor 20 pulgadas', precio: 500},
-    {Nombre: 'Television 50 pulgadas', precio: 700},
-    {Nombre: 'Tablet', precio: 300},
-    {Nombre: 'Audifonos', precio: 200},
-    {Nombre: 'Teclado', precio: 50},
-    {Nombre: 'Celular', precio: 500},
-    {Nombre: 'Bocinas', precio: 300},
-    {Nombre: 'Laptop', precio: 800}
-  ]
+    { Nombre: 'Monitor 20 pulgadas', precio: 500 },
+    { Nombre: 'Television 50 pulgadas', precio: 700 },
+    { Nombre: 'Tablet', precio: 300 },
+    { Nombre: 'Audifonos', precio: 200 },
+    { Nombre: 'Teclado', precio: 50 },
+    { Nombre: 'Celular', precio: 500 },
+    { Nombre: 'Bocinas', precio: 300 },
+    { Nombre: 'Laptop', precio: 800 }
+]
 
-  for(let i = 0; i < carrito.length; i++){
+for (let i = 0; i < carrito.length; i++) {
     console.log(carrito[i].Nombre);
-  }
+}
+
+// While Loop
+
+// let i = 0;  // Indice
+
+// while (i < carrito.length) {  // Condicion
+
+//     console.log(carrito[i].Nombre);
+
+//     i++  // Incremento
+// }
+
+// Do While Loop
+
+let i = 0;
+
+do{
+    console.log(i);
+    i++
+}while(i<10)
