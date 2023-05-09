@@ -20,5 +20,22 @@ const produto3 = new Producto('Monitor flexible 29"', 1000, false);
 
 console.log(produto2);
 console.log(produto3);
-console.log(produto2.formatearProducto());
 console.log(produto3.getPrecio());
+
+// Herencia
+
+class Libro extends Producto{
+    constructor(nombre, precio, isbn){
+        super(nombre, precio);
+        this.isbn = isbn;
+    } 
+
+    formatearProducto(){
+        return `${super.formatearProducto()} y su ISBN es ${this.isbn}`;
+    }
+}
+
+const libro = new Libro('Aprende JS', 2285, '001256');
+
+console.log(libro.formatearProducto());
+console.log(produto2.formatearProducto());
