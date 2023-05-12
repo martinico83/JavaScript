@@ -1,0 +1,27 @@
+{
+    "empleados" : [
+        {
+            "id" : 1,
+            "nombre" : "Martin",
+            "puesto" : "Programador Web"
+        },
+
+        {
+            "id" : 2,
+            "nombre" : "Nicolas",
+            "puesto" : "Tecnico en Electronica"
+        },
+
+        {
+            "id" : 3,
+            "nombre" : "Carolina",
+            "puesto" : "Programadora IA"
+        },
+
+        {
+            "id" : 4,
+            "nombre" : "Laira",
+            "puesto" : "Programadora Full Stack"
+        }
+    ]
+}
