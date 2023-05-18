@@ -51,3 +51,33 @@ navegacion.appendChild(nuevoEnlace);
 
 console.log(nuevoEnlace);
 
+// Eventos
+
+console.log(1);
+
+window.addEventListener('load', function(){  // Load espera a que el JS y los archivos que dependen del HTML esten listos
+    console.log(2);
+});
+
+//window.addEventListener('load', imprimir);
+//window.addEventListener('load', imprimir());
+
+window.onload = function(){
+    console.log(3);
+}
+
+document.addEventListener('DOMContentLoaded', function(){  // Solo espera por el HTML, pero no espera CSS o imagenes 
+    console.log(4)
+})
+
+
+
+console.log(5);
+
+/*function imprimir(){
+    console.log(2);
+}*/
+
+window.onscroll = function(){
+    console.log('scrolling.....');
+}
