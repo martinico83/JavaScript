@@ -32,7 +32,7 @@ const nuevoEnlace = document.createElement('A')
 
 // Agregar el href
 
-nuevoEnlace.href = 'nuevoEnlace.html';    
+nuevoEnlace.href = 'nuevoEnlace.html';
 
 // Agregar el texto
 
@@ -53,7 +53,7 @@ console.log(nuevoEnlace);
 
 // Eventos
 
-console.log(1);
+/* console.log(1);
 
 window.addEventListener('load', function(){  // Load espera a que el JS y los archivos que dependen del HTML esten listos
     console.log(2);
@@ -72,22 +72,22 @@ document.addEventListener('DOMContentLoaded', function(){  // Solo espera por el
 
 
 
-console.log(5);
+console.log(5); */
 
 /*function imprimir(){
     console.log(2);
 }*/
 
-window.onscroll = function(evento){
+/* window.onscroll = function(evento){
     console.log(evento);
-}
+} */
 
 
 // Seleccionar elementos y asociarles un evento
 
 const btnEnviar = document.querySelector('.boton--primario');
 
-btnEnviar.addEventListener('click', function(evento){
+btnEnviar.addEventListener('click', function (evento) {
     console.log(evento);
     evento.preventDefault();
 
@@ -95,3 +95,42 @@ btnEnviar.addEventListener('click', function(evento){
     console.log('Enviando formulario');
 });
 
+// Eventos de los Inputs y Textarea
+
+const nombre = document.querySelector('#nombre');
+const email = document.querySelector('#email');
+const mensaje = document.querySelector('#mensaje');
+
+/* nombre.addEventListener('input',function(e){
+    console.log(e.target.value);
+});
+
+email.addEventListener('input',function(e){
+    console.log(e.target.value);
+});
+
+mensaje.addEventListener('input',function(e){
+    console.log(e.target.value);
+}); */
+
+const datos = {
+    nombre: '',
+    email: '',
+    mensaje: ''
+}
+
+nombre.addEventListener('input', leerTexto);
+email.addEventListener('input', leerTexto);
+mensaje.addEventListener('input', leerTexto);
+
+/* function leerTexto(){
+    console.log('Escribiendo');
+} */
+
+function leerTexto(e) {
+    //console.log(e.target.value);
+
+    datos[e.target.id] = e.target.value;
+
+    console.log(datos);
+}
