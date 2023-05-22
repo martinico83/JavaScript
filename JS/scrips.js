@@ -101,7 +101,7 @@ const btnEnviar = document.querySelector('.boton--primario');
 const nombre = document.querySelector('#nombre');
 const email = document.querySelector('#email');
 const mensaje = document.querySelector('#mensaje');
-const  formulario = document.querySelector('.formulario');
+const formulario = document.querySelector('.formulario');
 
 
 /* nombre.addEventListener('input',function(e){
@@ -127,10 +127,28 @@ email.addEventListener('input', leerTexto);
 mensaje.addEventListener('input', leerTexto);
 // El evento de submit
 
-formulario.addEventListener('submit', function(evento) {
+formulario.addEventListener('submit', function (evento) {
     evento.preventDefault();
 
-    console.log('Send form...');
+    // Validar formulario
+
+    const { nombre, email, mensaje } = datos;
+
+    if (nombre == '' || email == '' || mensaje == '') {
+        mostrarError('Todos los campos son obligatorios');
+
+        return; // Corta la ejecucion del codigo
+    }
+
+    // Muestra mensaje de Formulario enviado
+
+    mostrarEnviadoOk('Formulario Enviado');
+
+
+    // Enviar formulario
+
+    console.log('Enviando Formulario....');
+
 })
 
 
@@ -143,6 +161,41 @@ function leerTexto(e) {
 
     datos[e.target.id] = e.target.value;
 
-    console.log(datos);
+    //onsole.log(datos);
 }
 
+// Muestra un ERROR en pantalla
+
+function mostrarError(mensaje) {
+    const error = document.createElement('p');
+    error.textContent = mensaje;
+
+    error.classList.add('error');
+
+    formulario.appendChild(error);
+
+    // Desaparezca despues de 5 segundos
+
+    setTimeout(() => {
+        error.remove();
+    }, 5000);
+
+}
+
+// Muestra mensaje de formulario enviado
+
+function mostrarEnviadoOk(mensaje) {
+    const enviadoOk = document.createElement('p');
+    enviadoOk.textContent = mensaje;
+
+    enviadoOk.classList.add('correcto');
+
+    formulario.appendChild(enviadoOk);
+
+    // Desaparezca despues de 5 segundos
+
+    setTimeout(() => {
+        enviadoOk.remove();
+    }, 5000);
+
+}
